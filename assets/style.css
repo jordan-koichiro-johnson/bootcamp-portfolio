@@ -2,8 +2,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+a {
+    outline: none;
+    text-decoration: none;
+}
+
 header {
-    background: linear-gradient(to right, rgb(2, 2, 65), rgb(29, 29, 231));
+    background: linear-gradient(to right, #8854d0, #a55eea);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -11,14 +16,15 @@ header {
     height: 150px;
     align-content: center;
     flex-basis: fit-content;
+    float: inline-start;
 }
 
 /* my name */
 
 header h1{
     text-align: center;
-    background-color: aquamarine;
-    color: darkblue;
+    background-color: #f7b731;
+    color: #4b6584;
     font-size: 2em;
     width: max-content;
     border: 2px solid grey;
@@ -28,7 +34,7 @@ header h1{
     flex-basis: fit-content;
     margin-left: 50px;
     padding: 5px;
-    border-radius: 8px;
+    border-radius: 2px;
 }
 
 /* links */
@@ -39,7 +45,7 @@ header ul{
     position: relative;
     flex-basis: fit-content;
     padding-right: 50px;
-    color: darkblue;
+    color: #4b6584;
     align-items: center;
 
 }
@@ -49,25 +55,34 @@ header ul li {
     border: 2px solid grey;
     box-shadow: 2px 2px 5px #aaaaaa;
     margin: 2px;
-    background-color: rgb(37, 235, 225);
+    background-color: #eb3b5a;
     flex-basis: fit-content;
     width: max-content;
     padding: 5px;
-    border-radius: 8px;
-    transition: all 0.5s ease-in-out;
+    border-radius: 2px;
+    /* transition: all 0.5s ease-in-out; */
     height: max-content;
     font-size: 1.5em;
+
+    box-shadow: inset 0 0 0 0 #a5b1c2;
+    /* color: #54b3d6; */
+    /* margin: 0 -.25rem;
+    padding: 0 .25rem; */
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
 }
 
 header ul li:hover{
-    box-shadow: inset 0px 0px 8px grey, 0px 0px 15px #aaaaaa;
+    /* box-shadow: inset 0px 0px 8px grey, 0px 0px 15px #aaaaaa; */
+
+    box-shadow: inset 200px 0 0 0 #a5b1c2;
+    color: white;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 850px) {
 
     header {
-      display: flex;
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
     header h1 {
@@ -84,23 +99,24 @@ header ul li:hover{
 /* background with subtitlte */
 
 .background {
+    position: relative;
     display: flex;
     background-image: 
-    linear-gradient(black 50%, black 0%),
-    url(https://media.istockphoto.com/photos/neon-background-abstract-blue-and-pink-with-light-shapes-line-picture-id1191658515?b=1&k=20&m=1191658515&s=170667a&w=0&h=cS0xPQx1SaV6awUuT62L1MFTNB68Bz7WtAiXkEpfUN4=);
+    linear-gradient(#fd9644, #eb3b5a);
+    
     background-size: cover;
     background-blend-mode: overlay;
     height: 200px;
     text-align: center;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #20bf6b;
     padding: 20px;
     font-size: 5em;
     text-shadow: black 1px 0 10px;
 }
 
-@media  and  (max-width: 768px){
+@media only screen  and  (max-width: 850px){
     
     .background{
         font-size: 2.5em;
@@ -110,26 +126,146 @@ header ul li:hover{
 /* main section */
 
 section {
-    background-color: aqua;
+    background-color: #2bcbba;   
+
+    color: #8854d0;
+
+}
+
+#aboutMe {
+    display: flex;
+    /* gap: 2rem; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+}
+
+
+section h2{
+    /* flex-shrink: 1; */
+    font-size: 4em;
+    
+    padding-right: 2rem;
+    padding-left: 1rem;
+    border-right: black 20px solid;
+    text-align: center;
+    padding-bottom: 5vh;
+    width: 30%;
+}
+
+
+
+section p{
+    /* flex-shrink: 2; */
+    font-size: 2em;
+    width: 70%;
+    /* padding-bottom: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    margin-left: 10vh;
+    margin-right: 10vh; */
+
+    /* padding-left: 5%; */
+    padding-left: 2rem;
 }
 
 section article{
+ 
+
+    padding-top: 30px;
+    padding-bottom: 30px
+    
+}
+
+
+#works {
+    /* border: black 20px solid; */
+
+    /* margin-bottom: 30px; */
     display: flex;
+    flex-direction: row;
+
+    /* flex-wrap: wrap; */
+    justify-items: center;
+    
+}
+
+#pictures {
+    display: flex;
+    
     flex-wrap: wrap;
+    padding-left: 2rem;
 }
 
 section article div {
-    position: relative;
-    top: 15px;
-    max-width: 10%;
+    padding: 20px;
+    flex-direction: columns;
     text-align: center;
     border-style: solid;
     border-width: 1px;
     border-radius: 10px;
     padding: 10px;
-    flex: 0 0 400px;
-    background: linear-gradient(red, blue);
+  
     margin: 5px;
+
+}
+
+
+#calculator {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Citizen_SLD-100NR_calculator.jpg/220px-Citizen_SLD-100NR_calculator.jpg);
+    background-size: cover;
+    width: 25rem;
+    height: 25rem;
+    background-position: center;
+    flex-shrink: 1;
+    max-width: 100%;
+
+}
+
+#calender {
+    background-image: url(https://photo-store.cvs.com/resources/images/cvs/store/2015/global/470x470/Cals_TopDesigns_PoppyBotanicals_470x470_2021.png);
+    background-size: cover;
+    width: 25rem;
+    height: 25rem;
+    background-position: center;
+    flex-shrink: 1;
+    max-width: 100%;
+
+}
+
+#clock {
+    background-image: url(https://www.ikea.com/us/en/images/products/pluttis-wall-clock-black__1013114_pe829054_s5.jpg);
+    background-size: cover;
+    /*width: auto;
+    height: auto;
+    min-height: ; */
+
+    height: 600px;
+    min-width: 90%;
+    background-position: center;
+    flex-shrink: 2;
+    /* max-width: 100%; */
+ 
+}
+
+
+
+@media screen and  (max-width: 768px) {
+    
+    #clock {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    #calender {
+        height: 20rem;
+        width: 20rem;
+    }
+
+    #calculator {
+        height: 20rem;
+        width: 20rem;
+    }
 }
 
 section div h3 {
@@ -139,12 +275,12 @@ section div h3 {
     top: -20px;
 }
 
-section img {
+/* section img { */
 
-    max-height: 100px; width: auto;
-
+    /* max-height: 100px; width: auto; */
+/* 
     
-}
+} */
 
 section div:hover{
     box-shadow: inset 0px 0px 8px grey, 0px 0px 15px #aaaaaa;
@@ -152,4 +288,82 @@ section div:hover{
 
 section div:hover h3{
     box-shadow: inset 0px 0px 8px grey, 0px 0px 15px #aaaaaa;
+}
+
+/* contact */
+
+footer {
+    background: linear-gradient( #8854d0, #4b6584);
+
+    text-align: center;
+}
+
+footer h1 {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fd9644;
+    text-align: center;
+    border: 2px solid grey;
+    box-shadow: 2px 2px 5px #aaaaaa;
+    margin: 2px;
+    flex-basis: fit-content;
+    width: max-content;
+    padding: 5px;
+    border-radius: 2px;
+    transition: all 0.5s ease-in-out;
+}
+
+footer ul{
+    color: black;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+}
+
+footer ul li {
+    text-align: center;
+    border: 2px solid grey;
+    box-shadow: 2px 2px 5px #aaaaaa;
+    margin: 2px;
+    background-color: #fd9644;
+    flex-basis: fit-content;
+    width: max-content;
+    padding: 5px;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 0 #a5b1c2;
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
+
+    font-size: 1em;
+}
+
+footer ul li:hover {
+    box-shadow: inset 500px 0 0 0 #a5b1c2;
+    color: white;
+}
+
+
+
+
+@media screen and (max-width: 1400px) {
+    section h2{
+        border-right: black 0px solid;
+        width: 100%;
+    }
+
+    #aboutMe{
+        display: block;
+        text-align: center;
+    }
+
+    section p{
+        width: 100%;
+    }
+
+    #works{
+        display: block;
+        text-align: center;
+    }
 }
